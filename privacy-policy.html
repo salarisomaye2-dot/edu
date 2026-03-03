@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - LoomLore Academy</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600&display=swap');
+
+    :root {
+      --colorPrimary: oklch(0.49 0.15 349);
+      --colorPrimaryLight: oklch(0.69 0.13 350);
+      --colorDark: oklch(0.34 0.15 349);
+      --colorSecondary: oklch(0.49 0.11 20);
+      --colorSurfaces: oklch(0.98 0.02 350);
+      --colorText: oklch(0.20 0.05 350);
+      --colorLines: oklch(0.85 0.05 350);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Merriweather', serif;
+      font-weight: 400;
+      color: var(--colorText);
+      background-color: var(--colorSurfaces);
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+      margin: 0 0 1rem 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .siteHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 3rem;
+      background: transparent;
+      border-bottom: 1px solid var(--colorLines);
+      position: relative;
+      background-color: #ffffff;
+    }
+
+    .brandWrap {
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--colorPrimary);
+    }
+
+    .brandAcc {
+      font-size: 0.85rem;
+      color: var(--colorSecondary);
+      display: block;
+      font-weight: 400;
+    }
+
+    .mainNav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .navLinks {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navItem {
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    
+    .navItem:hover {
+      color: var(--colorPrimaryLight);
+    }
+
+    .ctaBtn {
+      background-color: var(--colorPrimary);
+      color: #ffffff;
+      padding: 0.6rem 1.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: transform 0.2s, background 0.2s;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .ctaBtn:hover {
+      transform: scale(1.05);
+      background-color: var(--colorDark);
+    }
+
+    .mobileToggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--colorLines);
+      border-radius: 4px;
+      padding: 0.5rem;
+      cursor: pointer;
+      color: var(--colorText);
+    }
+
+    @media (max-width: 768px) {
+      .mobileToggle { display: block; }
+      .mainNav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        border-bottom: 1px solid var(--colorLines);
+        padding: 1.5rem 0;
+        z-index: 1000;
+      }
+      .mainNav.navActive { display: flex; }
+      .navLinks {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
+      }
+      .ctaBtn { margin-top: 1rem; }
+    }
+
+    /* Tech Startup Custom Styles */
+    .privacyHero {
+      background: radial-gradient(circle at center, oklch(0.99 0.01 350) 0%, oklch(0.95 0.02 350) 100%);
+      padding: 4rem 3rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .heroText { flex: 1 1 60%; }
+    .heroImg { 
+      flex: 1 1 30%; 
+      border: 1px solid var(--colorLines);
+      border-radius: 4px;
+      transform: translateX(10px);
+    }
+
+    .bentoGrid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: minmax(150px, auto);
+      gap: 1.5rem;
+      padding: 3rem;
+    }
+    .privacyCard {
+      background: #ffffff;
+      border: 1px solid var(--colorLines);
+      border-radius: 4px;
+      padding: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    .privacyCard:hover {
+      transform: scale(1.05);
+    }
+    .largeMetric { grid-column: span 2; grid-row: span 2; }
+    .mediumCard { grid-column: span 2; }
+    .smallCard { grid-column: span 1; }
+
+    .iconOutline {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--colorPrimary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--colorPrimary);
+    }
+
+    @media (max-width: 992px) {
+      .bentoGrid { grid-template-columns: repeat(2, 1fr); }
+      .privacyHero { padding: 3rem 1.5rem; }
+    }
+    @media (max-width: 600px) {
+      .bentoGrid { grid-template-columns: 1fr; }
+      .largeMetric, .mediumCard { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+  <header class="siteHeader">
+    <div class="brandWrap">
+      <a href="/">
+        LoomLore Academy
+        <span class="brandAcc">Textile Education</span>
+      </a>
+    </div>
+    
+    <button id="navToggleBtn" class="mobileToggle" aria-label="Toggle Menu">☰</button>
+
+    <nav id="primaryNavContainer" class="mainNav">
+      <ul class="navLinks">
+        <li><a href="/" class="navItem">Home</a></li>
+        <li><a href="courses.html" class="navItem">Courses</a></li>
+        <li><a href="workshops.html" class="navItem">Workshops</a></li>
+        <li><a href="about-academy.html" class="navItem">About</a></li>
+      </ul>
+      <a href="workshops.html" class="ctaBtn">Book Workshop</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="privacyHero">
+      <div class="heroText">
+        <h1>Your Trust is Our Primary Warp and Weft.</h1>
+        <p>At LoomLore Academy, we treat your personal data with the same precision we apply to a complex tapestry. We don't just teach weaving; we safeguard the threads of information you share with us. How do we ensure your privacy stays pristine?</p>
+      </div>
+      <img src="images/jevu-lica78.jpeg" alt="Abstract textile patterns representing data security" class="heroImg" width="640" height="448">
+    </section>
+
+    <section class="bentoGrid">
+      <div class="privacyCard largeMetric">
+        <div class="iconOutline"><i class="fa-solid fa-shield-halved"></i></div>
+        <h2>Core Privacy Commitment</h2>
+        <p>Our commitment to your privacy isn't just a legal checkbox. It's a fundamental part of how we operate in the digital textile space. Whether you're enrolling in a high-fidelity weaving course or buying bespoke yarns, your data stays within our looms. We use encrypted payment processing via industry leaders, meaning we never store your credit card digits on our own servers. It's safe, it's efficient, and it's essential.</p>
+        <p>We've spent 12 years building a community based on craft and trust. Your email isn't a commodity to us; it's a direct line for education. We'll never sell your contact info to third-party marketing firms because that's just poor craftsmanship.</p>
+      </div>
+
+      <div class="privacyCard mediumCard">
+        <div class="iconOutline"><i class="fa-solid fa-cookie-bite"></i></div>
+        <h3>The Cookie Jar</h3>
+        <p>Why do we use cookies? Mostly to remember your loom preferences and cart items. These tiny files help us understand which textile history modules are trending so we can create better content for you. You're always in control of your browser settings.</p>
+      </div>
+
+      <div class="privacyCard smallCard">
+        <div class="iconOutline"><i class="fa-solid fa-user-lock"></i></div>
+        <h3>Data Access</h3>
+        <p>Want to see what we have on file? Just ask. We believe in total transparency.</p>
+      </div>
+
+      <div class="privacyCard smallCard">
+        <div class="iconOutline"><i class="fa-solid fa-envelope-open-text"></i></div>
+        <h3>Communications</h3>
+        <p>Subscribe for art tips, unsubscribe whenever you like. No strings attached.</p>
+      </div>
+
+      <div class="privacyCard mediumCard">
+        <div class="iconOutline"><i class="fa-solid fa-building-shield"></i></div>
+        <h3>Third Party Partners</h3>
+        <p>We only partner with tools that respect artisan values. This includes our hosting providers and educational platforms. Each partner is vetted for compliance with global standards like GDPR and CCPA to ensure our New York-based academy meets world-class requirements.</p>
+      </div>
+    </section>
+
+    <section style="padding: 3rem; background: var(--colorSurfaces);">
+      <h2 style="text-align: center; margin-bottom: 2rem;">What Our Scholars Say About Our Integrity</h2>
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+        <div class="privacyCard" style="border-left: 4px solid var(--colorPrimary);">
+          <p style="font-style: italic; font-size: 1.1rem;">"I was hesitant about sharing my portfolio and personal details online, but LoomLore Academy has been incredibly professional. Their data handling is as robust as their double-weave techniques. I've never received a single piece of spam since joining their workshop."</p>
+          <p><strong>Kenai Zaback</strong><br><small>Professional Textile Artist</small></p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <div class="privacyCard">
+             <p>"Simple and clear. No legal jargon meant to confuse me!"</p>
+             <p><strong>Yua A.</strong></p>
+          </div>
+          <div class="privacyCard">
+             <p>Why did we choose LoomLore Academy? Because their ethics match their aesthetic. From the classroom to the checkout, privacy is woven into the experience.</p>
+             <p><strong>Mareb Wulfers</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>  <style>
+    .siteFooter {
+      background-color: #ffffff;
+      border-top: 1px solid var(--colorLines);
+      padding: 3rem 0 1rem;
+      margin-top: 3rem;
+    }
+
+    .footerGrid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 0 3rem;
+    }
+
+    .footerColTitle {
+      font-size: 1.1rem;
+      color: var(--colorPrimary);
+      margin-bottom: 1.25rem;
+    }
+
+    .footerText {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--colorText);
+      margin-bottom: 0.5rem;
+    }
+
+    .footerLinks {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footerLinks li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footerLinks a {
+      font-size: 0.9rem;
+      color: var(--colorText);
+      transition: color 0.2s;
+    }
+
+    .footerLinks a:hover {
+      color: var(--colorPrimary);
+    }
+
+    .footerBottom {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid var(--colorLines);
+      font-size: 0.8rem;
+      color: var(--colorSecondary);
+    }
+
+    /* Cookie Banner Scoped Styles */
+    .cookieConsent {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--colorSurfaces);
+      border-top: 1px outset var(--colorLines);
+      padding: 1rem 2rem;
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 9999;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+      box-sizing: border-box;
+    }
+
+    .cookieMsg {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .cookieConsent {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+
+  <footer class="siteFooter">
+    <div class="footerGrid">
+      <div class="footerCol">
+        <h4 class="footerColTitle">LoomLore Academy</h4>
+        <p class="footerText">Empowering textile enthusiasts and professionals through history, technique, and sustainability.</p>
+      </div>
+      
+      <div class="footerCol">
+        <h4 class="footerColTitle">Quick Links</h4>
+        <ul class="footerLinks">
+          <li><a href="courses.html">Course Catalog</a></li>
+          <li><a href="workshops.html">In-Studio Workshops</a></li>
+          <li><a href="sustainable-practices.html">Sustainability Hub</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footerCol">
+        <h4 class="footerColTitle">Visit & Contact</h4>
+        <p class="footerText">937 Onderdonk Avenue</p>
+        <p class="footerText">New York, NY 11385, USA</p>
+        <p class="footerText">+14722870795</p>
+        <p class="footerText">info@loomloreacademy.com</p>
+      </div>
+
+      <div class="footerCol">
+        <h4 class="footerColTitle">Legal</h4>
+        <ul class="footerLinks">
+          <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footerBottom">
+      &copy; 2024 LoomLore Academy. All rights reserved.
+    </div>
+  </footer>
+
+  <div id="globalCookieNotice" class="cookieConsent">
+    <p class="cookieMsg">We use cookies to ensure optimal functionality on our education platform. By continuing your visit, you accept our use of cookies.</p>
+    <button id="acceptCookieBtn" class="ctaBtn">Accept & Close</button>
+  </div>
+
+  <script type="module">
+    /* Handles cookie state and banner display */
+    const initBanner = () => {
+      const banner = document.getElementById('globalCookieNotice');
+      const btn = document.getElementById('acceptCookieBtn');
+      const cookieName = 'cookieConsent_tX8qL9p';
+      
+      if(!banner || !btn) return;
+      
+      if(!localStorage.getItem(cookieName)) {
+        banner.style.display = 'flex';
+      }
+
+      btn.addEventListener('click', () => {
+        localStorage.setItem(cookieName, 'true');
+        banner.style.display = 'none';
+      });
+    };
+    initBanner();
+  </script>
+</body>
+</html>

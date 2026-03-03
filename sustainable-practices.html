@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustainable Practices - LoomLore Academy</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600&display=swap');
+
+    :root {
+      --colorPrimary: oklch(0.49 0.15 349);
+      --colorPrimaryLight: oklch(0.69 0.13 350);
+      --colorDark: oklch(0.34 0.15 349);
+      --colorSecondary: oklch(0.49 0.11 20);
+      --colorSurfaces: oklch(0.98 0.02 350);
+      --colorAccent: oklch(0.54 0.15 170);
+      --colorText: oklch(0.20 0.05 350);
+      --colorLines: oklch(0.85 0.05 350);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Merriweather', serif;
+      font-weight: 400;
+      color: var(--colorText);
+      background-color: var(--colorSurfaces);
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+      margin: 0 0 1rem 0;
+      line-height: 1.2;
+    }
+
+    .text-primary { color: var(--colorPrimary); }
+    .sectionPadding { padding: 4rem 2rem; }
+
+    .heroSection {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      min-height: 60vh;
+      background: radial-gradient(circle at center, oklch(0.95 0.03 350) 0%, var(--colorSurfaces) 100%);
+      gap: 2rem;
+    }
+
+    .heroContent {
+      flex: 1 1 55%;
+      padding-right: 2rem;
+    }
+
+    .heroImage {
+      flex: 1 1 35%;
+      position: relative;
+      transform: translateX(10px);
+    }
+
+    .heroImage img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      border: 1px solid var(--colorLines);
+    }
+
+    .bentoGrid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: minmax(180px, auto);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .bentoCard {
+      background: #ffffff;
+      border: 1px solid var(--colorLines);
+      border-radius: 4px;
+      padding: 2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .bentoCard:hover {
+      transform: scale(1.05);
+    }
+
+    .cardLarge { grid-column: span 2; grid-row: span 2; }
+    .cardTall { grid-row: span 2; }
+    .cardWide { grid-column: span 2; }
+
+    .iconCircle {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--colorPrimary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .siteHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 3rem;
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--colorLines);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .brandWrap { font-weight: 600; font-size: 1.25rem; color: var(--colorPrimary); }
+    .brandAcc { font-size: 0.85rem; color: var(--colorSecondary); display: block; font-weight: 400; }
+    .mainNav { display: flex; align-items: center; gap: 2rem; }
+    .navLinks { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+    .navItem { font-size: 0.95rem; transition: color 0.2s; }
+    .ctaBtn {
+      background-color: var(--colorPrimary);
+      color: #ffffff;
+      padding: 0.6rem 1.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .heroContent { flex-basis: 100%; padding-right: 0; }
+      .heroImage { flex-basis: 100%; transform: none; }
+      .bentoGrid { grid-template-columns: 1fr; }
+      .cardLarge, .cardTall, .cardWide { grid-column: auto; grid-row: auto; }
+      .mobileFeature { display: flex; align-items: center; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="siteHeader">
+    <div class="brandWrap">
+      <a href="/">
+        LoomLore Academy
+        <span class="brandAcc">Textile Education</span>
+      </a>
+    </div>
+    
+    <button id="navToggleBtn" class="mobileToggle" aria-label="Toggle Menu">☰</button>
+
+    <nav id="primaryNavContainer" class="mainNav">
+      <ul class="navLinks">
+        <li><a href="/" class="navItem">Home</a></li>
+        <li><a href="courses.html" class="navItem">Courses</a></li>
+        <li><a href="workshops.html" class="navItem">Workshops</a></li>
+        <li><a href="about-academy.html" class="navItem">About</a></li>
+      </ul>
+      <a href="workshops.html" class="ctaBtn">Book Workshop</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="heroSection sectionPadding">
+      <div class="heroContent">
+        <h1 class="text-primary">Warp, Weft, and the World We Inherit.</h1>
+        <p>At LoomLore Academy, we don't just teach weaving; we champion a revolution. How can a craft so ancient lead the charge in modern sustainability? By returning to our roots while embracing scientific innovation.</p>
+        <p>We're committed to training the next generation of artisans to be as ethical as they are skilled. Our curriculum isn't just about loops and knots—it's about ecological stewardship.</p>
+        <a href="#manifesto" class="ctaBtn">Our Green Manifesto</a>
+      </div>
+      <div class="heroImage">
+        <img src="images/macah74.jpeg" alt="Close up of organic linen weaving on a traditional floor loom" width="640" height="768">
+      </div>
+    </section>
+
+    <section id="manifesto" class="sectionPadding">
+      <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <h2>Weaving a Greener Future</h2>
+        <p>Have you ever wondered about the true cost of a single yard of fabric? We have. That's why every course at LoomLore Academy integrates low-impact methodologies from day one.</p>
+      </div>
+
+      <div class="bentoGrid">
+        
+        <div class="bentoCard cardLarge">
+          <div class="iconCircle"><i class="fa-solid fa-leaf text-primary"></i></div>
+          <h3>Zero-Waste Drafting</h3>
+          <p>We've pioneered drafting techniques that ensure not a single inch of warp is left on the loom. Our students learn to design garments where the pattern geometry matches the loom's capabilities perfectly. It reduces off-cut waste to nearly zero. It's precise. It's elegant.</p>
+        </div>
+
+        
+        <div class="bentoCard cardTall">
+          <div class="iconCircle"><i class="fa-solid fa-earth-americas text-primary"></i></div>
+          <h3>Organic Yarn Sourcing</h3>
+          <p>We've curated a network of 12 local heritage farms. From organic cotton to recycled hemp blends, we show you how to vet your suppliers for transparency.</p>
+        </div>
+
+        
+        <div class="bentoCard">
+          <div class="iconCircle"><i class="fa-solid fa-flask-vial text-primary"></i></div>
+          <h3>Natural Dye Lab</h3>
+          <p>Explore our laboratory where we extract vibrant pigments from vegetable peels and bark. No harsh chemicals, just the beauty of nature.</p>
+        </div>
+
+        
+        <div class="bentoCard">
+          <div class="iconCircle"><i class="fa-solid fa-arrows-spin text-primary"></i></div>
+          <h3>Circular Fabric Life</h3>
+          <p>We teach the art of mending and re-weaving. Every fabric created here is designed to be composted or recycled.</p>
+        </div>
+
+        
+        <div class="bentoCard cardWide">
+          <img src="images/zey.jpeg" alt="Collection of natural dye extract jars in various earth tones" width="576" height="256" style="width: 100%; object-fit: cover; border-radius: 4px; margin-bottom: 1rem;">
+          <h3>The Science of Softness</h3>
+          <p>Sustainable doesn't mean scratchy. We're proving that ethical fibers often provide superior hand-feel and longevity compared to mass-produced synthetics. Join us in the lab to test tinsel strengths and absorption rates yourself.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectionPadding" style="background: oklch(0.95 0.01 350);">
+      <div class="container">
+        <h2 style="text-align: center;">Voices of Change</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+          <div class="bentoCard">
+            <p>"The natural dye course completely shifted my perspective on color. I don't think I can ever go back to synthetic pigments again. My skin feels better, and so does my soul."</p>
+            <p><strong>- Yua A.</strong></p>
+          </div>
+          <div class="bentoCard">
+            <p>Why did we choose LoomLore Academy for our brand's staff training? Because they actually understand the logistics of a closed-loop system. Most teach the theory; these folks teach the practical execution of a zero-waste studio. Life-changing stuff for our production team in Brooklyn.</p>
+            <p><strong>Muelas Accashian</strong><br><small>Creative Director, Urban Weave</small></p>
+          </div>
+          <div class="bentoCard">
+            <p>"Unbelievable depth. We spent three hours just discussing the ethics of different water-filtration systems for wash-cycles. They don't cut corners!"</p>
+            <p><strong>- Dazmin H.</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>  <style>
+    .siteFooter {
+      background-color: #ffffff;
+      border-top: 1px solid var(--colorLines);
+      padding: 3rem 0 1rem;
+      margin-top: 3rem;
+    }
+
+    .footerGrid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 0 3rem;
+    }
+
+    .footerColTitle {
+      font-size: 1.1rem;
+      color: var(--colorPrimary);
+      margin-bottom: 1.25rem;
+    }
+
+    .footerText {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--colorText);
+      margin-bottom: 0.5rem;
+    }
+
+    .footerLinks {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footerLinks li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footerLinks a {
+      font-size: 0.9rem;
+      color: var(--colorText);
+      transition: color 0.2s;
+    }
+
+    .footerLinks a:hover {
+      color: var(--colorPrimary);
+    }
+
+    .footerBottom {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid var(--colorLines);
+      font-size: 0.8rem;
+      color: var(--colorSecondary);
+    }
+
+    /* Cookie Banner Scoped Styles */
+    .cookieConsent {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--colorSurfaces);
+      border-top: 1px outset var(--colorLines);
+      padding: 1rem 2rem;
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 9999;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+      box-sizing: border-box;
+    }
+
+    .cookieMsg {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .cookieConsent {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+
+  <footer class="siteFooter">
+    <div class="footerGrid">
+      <div class="footerCol">
+        <h4 class="footerColTitle">LoomLore Academy</h4>
+        <p class="footerText">Empowering textile enthusiasts and professionals through history, technique, and sustainability.</p>
+      </div>
+      
+      <div class="footerCol">
+        <h4 class="footerColTitle">Quick Links</h4>
+        <ul class="footerLinks">
+          <li><a href="courses.html">Course Catalog</a></li>
+          <li><a href="workshops.html">In-Studio Workshops</a></li>
+          <li><a href="sustainable-practices.html">Sustainability Hub</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footerCol">
+        <h4 class="footerColTitle">Visit & Contact</h4>
+        <p class="footerText">937 Onderdonk Avenue</p>
+        <p class="footerText">New York, NY 11385, USA</p>
+        <p class="footerText">+14722870795</p>
+        <p class="footerText">info@loomloreacademy.com</p>
+      </div>
+
+      <div class="footerCol">
+        <h4 class="footerColTitle">Legal</h4>
+        <ul class="footerLinks">
+          <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footerBottom">
+      &copy; 2024 LoomLore Academy. All rights reserved.
+    </div>
+  </footer>
+
+  <div id="globalCookieNotice" class="cookieConsent">
+    <p class="cookieMsg">We use cookies to ensure optimal functionality on our education platform. By continuing your visit, you accept our use of cookies.</p>
+    <button id="acceptCookieBtn" class="ctaBtn">Accept & Close</button>
+  </div>
+
+  <script type="module">
+    /* Handles cookie state and banner display */
+    const initBanner = () => {
+      const banner = document.getElementById('globalCookieNotice');
+      const btn = document.getElementById('acceptCookieBtn');
+      const cookieName = 'cookieConsent_tX8qL9p';
+      
+      if(!banner || !btn) return;
+      
+      if(!localStorage.getItem(cookieName)) {
+        banner.style.display = 'flex';
+      }
+
+      btn.addEventListener('click', () => {
+        localStorage.setItem(cookieName, 'true');
+        banner.style.display = 'none';
+      });
+    };
+    initBanner();
+  </script>
+</body>
+</html>

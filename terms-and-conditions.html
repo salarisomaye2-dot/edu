@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms and Conditions - LoomLore Academy</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600&display=swap');
+
+    :root {
+      --colorPrimary: oklch(0.49 0.15 349);
+      --colorPrimaryLight: oklch(0.69 0.13 350);
+      --colorDark: oklch(0.34 0.15 349);
+      --colorSecondary: oklch(0.49 0.11 20);
+      --colorSurfaces: oklch(0.98 0.02 350);
+      --colorText: oklch(0.20 0.05 350);
+      --colorLines: oklch(0.85 0.05 350);
+      --accent: oklch(0.54 0.15 170);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Merriweather', serif;
+      font-weight: 400;
+      color: var(--colorText);
+      background-color: var(--colorSurfaces);
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+      margin: 0 0 1rem 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .siteHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 3rem;
+      background: #ffffff;
+      border-bottom: 1px solid var(--colorLines);
+      position: relative;
+    }
+
+    .brandWrap {
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--colorPrimary);
+    }
+
+    .brandAcc {
+      font-size: 0.85rem;
+      color: var(--colorSecondary);
+      display: block;
+      font-weight: 400;
+    }
+
+    .mainNav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .navLinks {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navItem {
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    
+    .navItem:hover {
+      color: var(--colorPrimaryLight);
+    }
+
+    .ctaBtn {
+      background-color: var(--colorPrimary);
+      color: #ffffff;
+      padding: 0.6rem 1.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: transform 0.2s, background 0.2s;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .ctaBtn:hover {
+      transform: scale(1.05);
+      background-color: var(--colorDark);
+    }
+
+    .mobileToggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--colorLines);
+      border-radius: 4px;
+      padding: 0.5rem;
+      cursor: pointer;
+      color: var(--colorText);
+    }
+
+    /* Scoped Page Styles */
+    .legalMain {
+      padding: 4rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .heroSection {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 5rem;
+      background: radial-gradient(circle at center, var(--colorSurfaces) 0%, #fef2f4 100%);
+      padding: 3rem;
+      border-radius: 4px;
+    }
+
+    .heroContent { flex: 1 1 60%; }
+    .heroImage { flex: 1 1 30%; border-radius: 4px; transform: rotate(1deg); border: 1px solid var(--colorLines); }
+
+    .bentoGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-auto-rows: minmax(200px, auto);
+      gap: 1.5rem;
+    }
+
+    .legalCard {
+      background: #ffffff;
+      border: 1px solid var(--colorLines);
+      padding: 2rem;
+      border-radius: 4px;
+      transition: transform 0.3s ease;
+    }
+
+    .legalCard:hover { transform: scale(1.05); }
+    .cardLarge { grid-column: span 2; }
+    
+    .iconBox {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--colorPrimary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .asymmetricTestimonials {
+      margin-top: 5rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+    }
+
+    .statBadge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.7rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .siteHeader { padding: 1rem; }
+      .mobileToggle { display: block; }
+      .mainNav { display: none; }
+      .heroContent, .heroImage { flex: 1 1 100%; transform: none; }
+      .cardLarge { grid-column: span 1; }
+      .asymmetricTestimonials { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="siteHeader">
+    <div class="brandWrap">
+      <a href="/">
+        LoomLore Academy
+        <span class="brandAcc">Textile Education</span>
+      </a>
+    </div>
+    
+    <button id="navToggleBtn" class="mobileToggle" aria-label="Toggle Menu">☰</button>
+
+    <nav id="primaryNavContainer" class="mainNav">
+      <ul class="navLinks">
+        <li><a href="/" class="navItem">Home</a></li>
+        <li><a href="courses.html" class="navItem">Courses</a></li>
+        <li><a href="workshops.html" class="navItem">Workshops</a></li>
+        <li><a href="about-academy.html" class="navItem">About</a></li>
+      </ul>
+      <a href="workshops.html" class="ctaBtn">Book Workshop</a>
+    </nav>
+  </header>
+
+  <main class="legalMain">
+    <section class="heroSection">
+      <div class="heroContent">
+        <h1>Regulatory Framework & Service Agreement</h1>
+        <p>Before we weave together, it's vital to establish the threads of our professional relationship. We've designed these terms to protect both the heritage of the craft and the curiosity of our students.</p>
+        <p>Are you ready to commit to the standards of LoomLore Academy?</p>
+      </div>
+      <img src="images/yoh.jpeg" alt="Close up of professional weaving loom with fine threads" class="heroImage" width="448" height="320">
+    </section>
+
+    <div class="bentoGrid">
+      <div class="legalCard cardLarge">
+        <span class="statBadge">Essential</span>
+        <div class="iconBox"><i class="fa-solid fa-scale-balanced text-primary"></i></div>
+        <h3>General Terms of Service</h3>
+        <p>By accessing our courses or New York studios, you're agreeing to these guidelines. We believe in transparency. If you don't agree with the minutiae here, we'll unfortunately have to restrict your access to our looms and digital archives.</p>
+        <p>Our curriculum is dynamic. We reserve the right to modify course content to reflect current sustainable textile practices without prior notification. It's how we stay at the cutting edge for our 1,200+ global alumni.</p>
+      </div>
+
+      <div class="legalCard">
+        <div class="iconBox"><i class="fa-solid fa-calendar-xmark text-primary"></i></div>
+        <h3>Cancellations</h3>
+        <p>Life happens. But weaving requires preparation. Cancellations made within 48 hours of a workshop incur a 50% fee. Why? Because we've already warped the loom for you. No-shows are ineligible for refunds.</p>
+      </div>
+
+      <div class="legalCard">
+        <div class="iconBox"><i class="fa-solid fa-copyright text-primary"></i></div>
+        <h3>Intellectual Property</h3>
+        <p>The drafting patterns and techniques shared in our courses are proprietary to LoomLore Academy. You're encouraged to sell the fabrics you create, but sharing our core instructional PDFs is a no-go. Respect the craft.</p>
+      </div>
+
+      <div class="legalCard">
+        <div class="iconBox"><i class="fa-solid fa-shield-heart text-primary"></i></div>
+        <h3>Studio Safety</h3>
+        <p>Working with heavy machinery like floor looms involves inherent risks. Students must follow all safety protocols provided by our instructors. We aren't liable for minor nicks or stains acquired during the creative process. Wear your apron!</p>
+      </div>
+    </div>
+
+    <section class="asymmetricTestimonials">
+      <div class="legalCard">
+        <p>"Why did we choose LoomLore Academy? Because their policies are as sturdy as their double-weave blankets. Clear, fair, and professional."</p>
+        <p><strong>Muelas Accashian</strong></p>
+      </div>
+      <div class="legalCard">
+        <p>The cancellation policy is very reasonable given the prep work involved. I've been a student here for 3 years and appreciate the clarity.</p>
+        <p><strong>Shonteria Franzwa</strong><br><small>Lead Designer, Urban Knits</small></p>
+      </div>
+    </section>
+  </main>  <style>
+    .siteFooter {
+      background-color: #ffffff;
+      border-top: 1px solid var(--colorLines);
+      padding: 3rem 0 1rem;
+      margin-top: 3rem;
+    }
+
+    .footerGrid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 0 3rem;
+    }
+
+    .footerColTitle {
+      font-size: 1.1rem;
+      color: var(--colorPrimary);
+      margin-bottom: 1.25rem;
+    }
+
+    .footerText {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--colorText);
+      margin-bottom: 0.5rem;
+    }
+
+    .footerLinks {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footerLinks li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footerLinks a {
+      font-size: 0.9rem;
+      color: var(--colorText);
+      transition: color 0.2s;
+    }
+
+    .footerLinks a:hover {
+      color: var(--colorPrimary);
+    }
+
+    .footerBottom {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid var(--colorLines);
+      font-size: 0.8rem;
+      color: var(--colorSecondary);
+    }
+
+    /* Cookie Banner Scoped Styles */
+    .cookieConsent {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--colorSurfaces);
+      border-top: 1px outset var(--colorLines);
+      padding: 1rem 2rem;
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 9999;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+      box-sizing: border-box;
+    }
+
+    .cookieMsg {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .cookieConsent {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+
+  <footer class="siteFooter">
+    <div class="footerGrid">
+      <div class="footerCol">
+        <h4 class="footerColTitle">LoomLore Academy</h4>
+        <p class="footerText">Empowering textile enthusiasts and professionals through history, technique, and sustainability.</p>
+      </div>
+      
+      <div class="footerCol">
+        <h4 class="footerColTitle">Quick Links</h4>
+        <ul class="footerLinks">
+          <li><a href="courses.html">Course Catalog</a></li>
+          <li><a href="workshops.html">In-Studio Workshops</a></li>
+          <li><a href="sustainable-practices.html">Sustainability Hub</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footerCol">
+        <h4 class="footerColTitle">Visit & Contact</h4>
+        <p class="footerText">937 Onderdonk Avenue</p>
+        <p class="footerText">New York, NY 11385, USA</p>
+        <p class="footerText">+14722870795</p>
+        <p class="footerText">info@loomloreacademy.com</p>
+      </div>
+
+      <div class="footerCol">
+        <h4 class="footerColTitle">Legal</h4>
+        <ul class="footerLinks">
+          <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footerBottom">
+      &copy; 2024 LoomLore Academy. All rights reserved.
+    </div>
+  </footer>
+
+  <div id="globalCookieNotice" class="cookieConsent">
+    <p class="cookieMsg">We use cookies to ensure optimal functionality on our education platform. By continuing your visit, you accept our use of cookies.</p>
+    <button id="acceptCookieBtn" class="ctaBtn">Accept & Close</button>
+  </div>
+
+  <script type="module">
+    /* Handles cookie state and banner display */
+    const initBanner = () => {
+      const banner = document.getElementById('globalCookieNotice');
+      const btn = document.getElementById('acceptCookieBtn');
+      const cookieName = 'cookieConsent_tX8qL9p';
+      
+      if(!banner || !btn) return;
+      
+      if(!localStorage.getItem(cookieName)) {
+        banner.style.display = 'flex';
+      }
+
+      btn.addEventListener('click', () => {
+        localStorage.setItem(cookieName, 'true');
+        banner.style.display = 'none';
+      });
+    };
+    initBanner();
+  </script>
+</body>
+</html>

@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Catalog - LoomLore Academy</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600&display=swap');
+
+    :root {
+      --colorPrimary: oklch(0.49 0.15 349);
+      --colorPrimaryLight: oklch(0.69 0.13 350);
+      --colorDark: oklch(0.34 0.15 349);
+      --colorSecondary: oklch(0.49 0.11 20);
+      --colorSurfaces: oklch(0.98 0.02 350);
+      --colorText: oklch(0.20 0.05 350);
+      --colorLines: oklch(0.85 0.05 350);
+      --colorAccent: oklch(0.54 0.15 170);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Merriweather', serif;
+      font-weight: 400;
+      color: var(--colorText);
+      background-color: var(--colorSurfaces);
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+      margin: 0 0 1rem 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .siteHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 3rem;
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--colorLines);
+      position: relative;
+    }
+
+    .brandWrap {
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--colorPrimary);
+    }
+
+    .brandAcc {
+      font-size: 0.85rem;
+      color: var(--colorSecondary);
+      display: block;
+      font-weight: 400;
+    }
+
+    .mainNav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .navLinks {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navItem {
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    
+    .navItem:hover {
+      color: var(--colorPrimaryLight);
+    }
+
+    .ctaBtn {
+      background-color: var(--colorPrimary);
+      color: #ffffff;
+      padding: 0.6rem 1.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: transform 0.2s, background 0.2s;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .ctaBtn:hover {
+      transform: scale(1.05);
+      background-color: var(--colorDark);
+    }
+
+    .mobileToggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--colorLines);
+      border-radius: 4px;
+      padding: 0.5rem;
+      cursor: pointer;
+      color: var(--colorText);
+    }
+
+    /* Catalog Specific Styles */
+    .heroSection {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 4rem 3rem;
+      background: radial-gradient(circle at center, oklch(0.95 0.02 350) 0%, oklch(0.98 0.02 350) 100%);
+      align-items: center;
+    }
+
+    .heroContent {
+      flex: 0 0 60%;
+      padding-right: 2rem;
+    }
+
+    .heroVisual {
+      flex: 0 0 40%;
+      transform: translateX(20px);
+    }
+
+    .heroVisual img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      border: 1px solid var(--colorLines);
+    }
+
+    .filterBar {
+      display: flex;
+      gap: 1rem;
+      padding: 2rem 3rem;
+      overflow-x: auto;
+      white-space: nowrap;
+      border-bottom: 1px solid var(--colorLines);
+    }
+
+    .filterChip {
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--colorLines);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      background: white;
+      transition: all 0.2s;
+    }
+
+    .filterChip.active, .filterChip:hover {
+      background: var(--colorPrimary);
+      color: white;
+      border-color: var(--colorPrimary);
+    }
+
+    .bentoGrid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: minmax(280px, auto);
+      gap: 1.5rem;
+      padding: 3rem;
+    }
+
+    .courseCard {
+      background: #ffffff;
+      border: 1px solid var(--colorLines);
+      border-radius: 4px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+
+    .courseCard:hover {
+      transform: scale(1.05);
+      z-index: 10;
+    }
+
+    .cardLg { grid-column: span 2; grid-row: span 2; }
+    .cardMd { grid-column: span 2; }
+    .cardSm { grid-column: span 1; }
+
+    .iconBox {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--colorPrimary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .metaInfo {
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid var(--colorLines);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--colorSecondary);
+    }
+
+    @media (max-width: 768px) {
+      .mobileToggle { display: block; }
+      .mainNav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        border-bottom: 1px solid var(--colorLines);
+        padding: 1.5rem 0;
+        z-index: 1000;
+      }
+      .mainNav.navActive { display: flex; }
+      .heroContent, .heroVisual { flex: 0 0 100%; transform: none; padding-right: 0; }
+      .bentoGrid {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+      }
+      .cardLg, .cardMd, .cardSm { grid-column: span 1; grid-row: span 1; }
+    }
+  </style>
+</head>
+<body>
+  <header class="siteHeader">
+    <div class="brandWrap">
+      <a href="/">
+        LoomLore Academy
+        <span class="brandAcc">Textile Education</span>
+      </a>
+    </div>
+    
+    <button id="navToggleBtn" class="mobileToggle" aria-label="Toggle Menu">☰</button>
+
+    <nav id="primaryNavContainer" class="mainNav">
+      <ul class="navLinks">
+        <li><a href="/" class="navItem">Home</a></li>
+        <li><a href="courses.html" class="navItem">Courses</a></li>
+        <li><a href="workshops.html" class="navItem">Workshops</a></li>
+        <li><a href="about-academy.html" class="navItem">About</a></li>
+      </ul>
+      <a href="workshops.html" class="ctaBtn">Book Workshop</a>
+    </nav>
+  </header>
+
+  <script type="module">
+    const initNav = () => {
+      const btn = document.getElementById('navToggleBtn');
+      const menu = document.getElementById('primaryNavContainer');
+      if(!btn || !menu) return;
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('navActive');
+      });
+    };
+    initNav();
+  </script>
+
+  <main>
+    <section class="heroSection">
+      <div class="heroContent">
+        <h1>Elevate Your Craft with Master-Led Curricula</h1>
+        <p>From the ancient looms of the Silk Road to 21st-century sustainable synthetics. We don't just teach weaving; we archive the soul of human industry.</p>
+        <p>Ready to thread your future? Our 12-month mastery programs are now open for autumn enrolment.</p>
+        <a href="#enroll" class="ctaBtn">Explore All Modules</a>
+      </div>
+      <div class="heroVisual">
+        <img src="images/mem-sowo.jpeg" alt="Close up of intricate weaving loom work" width="640" height="448">
+      </div>
+    </section>
+
+    <div class="filterBar">
+      <span class="filterChip active">All Courses</span>
+      <span class="filterChip">History</span>
+      <span class="filterChip">Practical Art</span>
+      <span class="filterChip">Sustainability</span>
+      <span class="filterChip">Theory</span>
+    </div>
+
+    <section class="bentoGrid">
+      
+      <div class="courseCard cardLg">
+        <div class="iconBox"><i class="fa-solid fa-scroll text-primary"></i></div>
+        <h3>The Global History of Fabric</h3>
+        <p>Why did linen define Egyptian status? In this 16-week deep dive, we'll trace the sociological and political impact of textiles through the ages. You'll analyze museum-grade samples and understand the trade routes that shaped nations.</p>
+        <p>Our most popular theory module for over 5 years. We think it's where every true artist should start.</p>
+        <div class="metaInfo">
+          <span><i class="fa-regular fa-clock"></i> 16 Weeks</span>
+          <span>£1,200</span>
+        </div>
+      </div>
+
+      
+      <div class="courseCard cardMd">
+        <div class="iconBox"><i class="fa-solid fa-palette text-secondary"></i></div>
+        <h3>Sustainable Dyeing Lab</h3>
+        <p>Master the chemistry of natural pigments. From madder root to indigo vats, discover how to achieve vibrant colors without destroying our waterways.</p>
+        <div class="metaInfo">
+          <span><i class="fa-regular fa-calendar"></i> 8-Week Intensive</span>
+          <span>£850</span>
+        </div>
+      </div>
+
+      
+      <div class="courseCard cardSm">
+        <div class="iconBox"><i class="fa-solid fa-compass text-accent"></i></div>
+        <h3>Fiber Theory 101</h3>
+        <p>Understanding the molecular bond of natural fibers. Essential for structural art.</p>
+        <div class="metaInfo">
+          <span>4 Weeks</span>
+          <span>£300</span>
+        </div>
+      </div>
+
+      <div class="courseCard cardSm">
+        <div class="iconBox"><i class="fa-solid fa-leaf text-primary"></i></div>
+        <h3>Ethical Sourcing</h3>
+        <p>Navigating the complex world of fair-trade wool and organic silk supply chains.</p>
+        <div class="metaInfo">
+          <span>6 Weeks</span>
+          <span>£450</span>
+        </div>
+      </div>
+
+      
+      <div class="courseCard cardMd">
+        <div class="iconBox"><i class="fa-solid fa-microscope"></i></div>
+        <h3>Advanced Weaving Techniques</h3>
+        <p>Jacquard patterns, double-beam setups, and complex tapestry structures. Requires prior completion of basic weaving or equivalent portfolio review.</p>
+        <div class="metaInfo">
+          <span>12 Weeks</span>
+          <span>£950</span>
+        </div>
+      </div>
+    </section>
+  </main>  <style>
+    .siteFooter {
+      background-color: #ffffff;
+      border-top: 1px solid var(--colorLines);
+      padding: 3rem 0 1rem;
+      margin-top: 3rem;
+    }
+
+    .footerGrid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 0 3rem;
+    }
+
+    .footerColTitle {
+      font-size: 1.1rem;
+      color: var(--colorPrimary);
+      margin-bottom: 1.25rem;
+    }
+
+    .footerText {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--colorText);
+      margin-bottom: 0.5rem;
+    }
+
+    .footerLinks {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footerLinks li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footerLinks a {
+      font-size: 0.9rem;
+      color: var(--colorText);
+      transition: color 0.2s;
+    }
+
+    .footerLinks a:hover {
+      color: var(--colorPrimary);
+    }
+
+    .footerBottom {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid var(--colorLines);
+      font-size: 0.8rem;
+      color: var(--colorSecondary);
+    }
+
+    /* Cookie Banner Scoped Styles */
+    .cookieConsent {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--colorSurfaces);
+      border-top: 1px outset var(--colorLines);
+      padding: 1rem 2rem;
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 9999;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+      box-sizing: border-box;
+    }
+
+    .cookieMsg {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .cookieConsent {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+
+  <footer class="siteFooter">
+    <div class="footerGrid">
+      <div class="footerCol">
+        <h4 class="footerColTitle">LoomLore Academy</h4>
+        <p class="footerText">Empowering textile enthusiasts and professionals through history, technique, and sustainability.</p>
+      </div>
+      
+      <div class="footerCol">
+        <h4 class="footerColTitle">Quick Links</h4>
+        <ul class="footerLinks">
+          <li><a href="courses.html">Course Catalog</a></li>
+          <li><a href="workshops.html">In-Studio Workshops</a></li>
+          <li><a href="sustainable-practices.html">Sustainability Hub</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footerCol">
+        <h4 class="footerColTitle">Visit & Contact</h4>
+        <p class="footerText">937 Onderdonk Avenue</p>
+        <p class="footerText">New York, NY 11385, USA</p>
+        <p class="footerText">+14722870795</p>
+        <p class="footerText">info@loomloreacademy.com</p>
+      </div>
+
+      <div class="footerCol">
+        <h4 class="footerColTitle">Legal</h4>
+        <ul class="footerLinks">
+          <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footerBottom">
+      &copy; 2024 LoomLore Academy. All rights reserved.
+    </div>
+  </footer>
+
+  <div id="globalCookieNotice" class="cookieConsent">
+    <p class="cookieMsg">We use cookies to ensure optimal functionality on our education platform. By continuing your visit, you accept our use of cookies.</p>
+    <button id="acceptCookieBtn" class="ctaBtn">Accept & Close</button>
+  </div>
+
+  <script type="module">
+    /* Handles cookie state and banner display */
+    const initBanner = () => {
+      const banner = document.getElementById('globalCookieNotice');
+      const btn = document.getElementById('acceptCookieBtn');
+      const cookieName = 'cookieConsent_tX8qL9p';
+      
+      if(!banner || !btn) return;
+      
+      if(!localStorage.getItem(cookieName)) {
+        banner.style.display = 'flex';
+      }
+
+      btn.addEventListener('click', () => {
+        localStorage.setItem(cookieName, 'true');
+        banner.style.display = 'none';
+      });
+    };
+    initBanner();
+  </script>
+</body>
+</html>
